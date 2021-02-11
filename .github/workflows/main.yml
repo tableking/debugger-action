@@ -1,5 +1,14 @@
 name: Ubuntu
-on: [push]
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: true
+        default: 'true'
+
 jobs:
   Ubuntu:
     runs-on: ubuntu-latest
